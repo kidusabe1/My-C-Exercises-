@@ -1,26 +1,17 @@
 #include <stdio.h>
-void fib(int n)
-{
-    int term1_285,term2_285,term3_285,i,fibn[100];
-    term1_285=0;
-    fibn[0]=term1_285;
-    term2_285=1;
-    fibn[1]=term2_285;
-    term3_285=term1_285+term2_285;
-    for(i=2;i<n;i++)
-    {
-        fibn[i]=fibn[i-1]+fibn[i-2];
-    }
-    for(i=0;i<n;i++)
-    {
-        printf("%d ",fibn[i]);
-    }
-}
 int main()
 {
+    const float pi_285=3.14;
+    float *ptr_285;
     int n;
-    printf("Provide the number of fibonacci terms u want=\n");
-    scanf("%d",&n);
-    fib(n);
+    ptr_285=&pi_285;
+    printf("The value of pi is %f\n",*ptr_285);
+    printf("But its okay, give your own desired value to pi\n");
+    scanf("%f",ptr_285);
+    printf("=-=-==-=-=-=-=-=-=-==-=-=-=-=-=-\n");
+    printf("The new value you have given is = %f\n",*ptr_285);
+    printf("=-=-==-=-=-=-=-=-=-==-=-=-=-=-=-\n");
+    n=1%10;
+    printf("%d ",n);
     return 0;
 }
