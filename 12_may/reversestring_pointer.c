@@ -2,16 +2,16 @@
 #include <string.h>
 int main()
 {
-    char arr[30], *ptr;
+    char arr_285[30], *ptr_285;
     int n,i;
     printf("Provide a short string\n");
-    fgets(arr,30,stdin);
-    n=strlen(arr);
-    ptr=&arr[n];
+    fgets(arr_285,30,stdin);
+    n=strlen(arr_285);
+    ptr_285=&arr_285[n];
     for(i=0;i<=n;i++)
     {
-        printf("%c ",*ptr);
-        ptr--;
+        printf("%c ",*ptr_285);
+        ptr_285--;
     }
     return 0;
 }

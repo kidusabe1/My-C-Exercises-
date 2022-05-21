@@ -2,22 +2,41 @@
 #include <string.h>
 int main()
 {
-    int i,j,count,n;
-    char arr[30][30],sub[30];
-    printf("How many words does your sentence have?\n");
-    scanf("%d",&n);
-    printf("Please provide a sentence\n");
-    for(i=0;i<n;i++)
+    int i,j,count,N,n,word_count=0;
+    char sent[30],word[10],arr[10],*ptr;
+    printf("Give a short sentence\n");
+    gets(sent);
+    printf("What is the word you are looking to count\n");
+    gets(word);
+    N= strlen(sent);
+    n= strlen(word);
+    ptr=arr;
+    for(i=0;i<N;i++)
     {
-        scanf("%s",arr[i]);
+        if(sent[i]==' ')
+        {
+            if(sent[i+1]==word[0])
+            {
+                ptr=&sent[i+1];
+                for(j=0;j<n;j++)
+                {
+                    if(*ptr==word[j])
+                    {
+                        count++;
+                        if(count==n)
+                        {
+                            word_count++;
+                        }
+                        if(count>n)
+                        {
+                            word_count--;
+                        }
+                        ptr++;
+                    }
+                }
+            }
+        }
     }
-    printf("What is the string you are looking to count?\n");
-    scanf("%s",sub);
-    for(i=0;i<n;i++)
-    {
-        if(strcmp(arr[i],sub)==0)
-        count++;
-    }
-    printf("count=%d",count);
+    printf("Word count is %d",word_count);
     return 0;
 }

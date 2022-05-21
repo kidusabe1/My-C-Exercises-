@@ -8,9 +8,8 @@ int fact(int n)
     else if (n=1)
     return 1;
 }
+
 int main()
 {
-    int n=5,res;
-    res=fact(n);
-    printf("%d ",res);
+    
 }
