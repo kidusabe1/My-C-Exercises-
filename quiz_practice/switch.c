@@ -1,26 +1,49 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 int main()
 {
-    int i,j,n,k;
-    int a[3][3];
-    printf("please give the elements of your first 3*3 matrix\n");
-    for(i=0;i<3;i++)
+    int m,n,M,N,i,j,k;
+    printf("Order of first matrix\n");
+    scanf("%d%d",&m,&n);
+    printf("Order of second matrix\n");
+    scanf("%d%d",&M,&N);
+    int A[m][n],B[M][N];
+    printf("Give elements of A\n");
+    for(i=0;i<m;i++)
     {
-        for(j=0;j<2;j++)
+        for(j=0;j<n;j++)
         {
-            scanf("%d",&a[i][j]);
+            scanf("%d",&A[i][j]);
         }
     }
-    printf("The transpose of your matrix will be=>\n");
-    for(j=0;j<2;j++)
+    /*printf("Give elements of B\n");
+    for(i=0;i<M;i++)
     {
-        for(i=0;i<3;i++)
+        for(j=0;j<N;j++)
         {
-            printf("%d ",a[i][j]);
-            if(j==1)
-            {
-                printf("\n");
-            }
+            scanf("%d",&B[i][j]);
+        }
+    }*/
+    printf("The transpose of your matrix is as follows\n");
+    for(j=0;j<n;j++)
+    {
+        for(i=0;i<m;i++)
+        {
+            B[i][j]=A[j][i];
+            if(i==(m-1))
+            printf("\n");
+        }
+    }
+
+
+    for(i=0;i<m;i++)
+    {
+        for(j=0;j<n;j++)
+        {
+            printf("%d\t",B[i][j]);
+            if(j==(n-1))
+            printf("\n");
         }
     }
     return 0;
