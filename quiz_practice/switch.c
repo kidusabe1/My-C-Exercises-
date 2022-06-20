@@ -1,27 +1,30 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-int SUM(int *pt,int size)
+#include<stdio.h>
+int findGCD(int a,int b)
 {
-    int i,res;
-    if(size==0)
+    while(a!=b)
     {
-        return *pt;
+        if(a>b)
+        {
+           return findGCD(a-b,b);
+        }
+        else
+            return findGCD(a,b-a);
     }
-    else
-    {
-        res= *pt+SUM(pt+1,size-1);
-    }
-    return res;
+    return a;
 }
+
 int main()
 {
-    int i,n[10];
-    printf("Give your integer elements\n");
-    for(i=0;i<10;i++)
-    {
-        scanf("%d",&n[i]);
-    }
-    printf("The sum of your integers is %d\n",SUM(n,10));
-    return 0;
+  int num1,num2,gcd;
+  printf("\n\n Recursion : Find GCD of two numbers :\n");
+  printf("------------------------------------------\n");  
+  printf(" Input 1st number: ");
+  scanf("%d",&num1);
+  printf(" Input 2nd number: ");
+  scanf("%d",&num2);
+  
+  gcd = findGCD(num1,num2);
+  printf("\n The GCD of %d and %d is: %d\n\n",num1,num2,gcd);
+  return 0;
 }
+

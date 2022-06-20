@@ -15,9 +15,9 @@ int SUM(int A_285[],int n_285)
 int main()
 {
     int i,A_285[30],num_285,sum_285;
-    printf("Please provide the number of your elements\n_285");
+    printf("Please provide the number of your elements_285");
     scanf("%d",&num_285);
-    printf("Please provide the elements of your list\n_285");
+    printf("Please provide the elements of your list_285");
     for(i=0;i<num_285;i++)
     {
         scanf("%d",&A_285[i]);

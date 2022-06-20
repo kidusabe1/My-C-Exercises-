@@ -1,14 +1,27 @@
-#include <stdio.h>
-void f(int *p, int *q)
-{
-    p=q;
-    *p=2;
-}
+#include<stdio.h>
 
+int findGCD(int a,int b)
+{
+     while(a!=b)
+     {
+          if(a>b)
+              return findGCD(a-b,b);
+          else
+             return findGCD(a,b-a);
+     }
+     return a;
+}
 int main()
 {
-    int i=0, j=1;
-    f(&i,&j);
-    printf("%d%d\n",i,j);
-    return 0;
+  int num1,num2,gcd;
+  printf("\n\n Recursion : Find GCD of two numbers :\n");
+  printf("------------------------------------------\n");  
+  printf(" Input 1st number: ");
+  scanf("%d",&num1);
+  printf(" Input 2nd number: ");
+  scanf("%d",&num2);
+  
+  gcd = findGCD(num1,num2);
+  printf("\n The GCD of %d and %d is: %d\n\n",num1,num2,gcd);
+  return 0;
 }
