@@ -46,10 +46,15 @@ int main()
     }while(i==1);
 
     if(stat()==0)
-    printf("Game draw\n");
-    
+    {
+        printf("Game draw\n");
+        getch();
+    }
     else if(stat()==-1)
-    printf("Game Over!\n Player %d won the game! Congratulations!",player--);
+    {
+        printf("Game Over!\n Player %d won the game! Congratulations!",player--);
+        getch();
+    }
 }
 
 /* return value 1 is for ongoing game
