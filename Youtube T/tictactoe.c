@@ -45,12 +45,12 @@ int main()
         player++;
     }while(i==1);
 
-    if(stat()==0)
+    if(i==0)
     {
         printf("Game draw\n");
         getch();
     }
-    else if(stat()==-1)
+    if(i==-1)
     {
         printf("Game Over!\n Player %d won the game! Congratulations!",player--);
         getch();
